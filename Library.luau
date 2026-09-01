@@ -318,7 +318,7 @@ local function ApplyDPIScale(Position)
 end
 
 local function ApplyTextScale(TextSize)
-    return (TextSize + 1) * DPIScale
+    return TextSize * DPIScale
 end
 
 local function GetTableSize(t)
