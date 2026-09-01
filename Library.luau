@@ -2118,7 +2118,6 @@ do
             ZIndex = 18,
             Parent = HueBoxOuter;
         })
-
         Library:Create("UIGradient", {
             Color = ColorSequence.new({
                 ColorSequenceKeypoint.new(0, Color3.new(1, 1, 1)),
