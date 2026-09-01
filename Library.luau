@@ -6189,6 +6189,7 @@ do
         BackgroundColor3 = Library.MainColor;
         BorderColor3 = Library.AccentColor;
         BorderMode = Enum.BorderMode.Inset;
+        BorderSizePixel = 0;
         Size = UDim2.new(1, 0, 1, 0);
         ZIndex = 201;
         Parent = WatermarkOuter;
@@ -6583,6 +6584,14 @@ function Library:CreateWindow(...)
         ZIndex = 1;
         Parent = Outer;
     })
+
+    local shadow = Instance.new("UIShadow")
+    shadow.Name = "UIShadow"
+    shadow.BlurRadius = UDim.new(0, 100)
+    shadow.Offset = UDim2.new(0, 0, 0, 100)
+    shadow.Color = Color3.fromRGB(0, 0, 0)
+    shadow.Transparency = 0
+    shadow.Parent = Inner
 
     Library:AddToRegistry(Inner, {
         BackgroundColor3 = "MainColor";
