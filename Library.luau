@@ -4040,7 +4040,7 @@ do
         local ToggleLabel = Library:CreateLabel({
             Size = UDim2.new(1, -19, 0, 11); -- size of toggle box (13) + size offset of previous layout (6)
             Position = UDim2.new(0, 19, 0, 0);
-            TextSize = 16;
+            TextSize = 15;
             Text = Info.Text;
             TextXAlignment = Enum.TextXAlignment.Left;
             ZIndex = 6;
