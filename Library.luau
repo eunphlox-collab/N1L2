@@ -6647,7 +6647,7 @@ function Library:CreateWindow(...)
         Position = UDim2.new(0, 0, 0, 0);
         Size = UDim2.new(1, 0, 0, 25);
         Text = WindowInfo.Title or "";
-        TextSize = 18,
+        TextSize = 19,
         TextXAlignment = Enum.TextXAlignment.Center;
         ZIndex = 1;
         Parent = Inner;
