@@ -284,7 +284,7 @@ local Library = {
     Notify = nil;
     NotifySide = "Left";
     ShowCustomCursor = false;
-    ShowToggleFrameInKeybinds = true;
+    ShowToggleFrameInKeybinds = false;
     NotifyOnError = false; -- true = Library:Notify for SafeCallback (still warns in the developer console)
 
     -- addons --
@@ -1443,7 +1443,7 @@ do
                 KeybindsToggleInner.BackgroundTransparency = if KeybindsToggle.Normal then 1 else 0
                 KeybindsToggleInner.BorderSizePixel = if KeybindsToggle.Normal then 0 else 1
 
-                KeybindsToggleLabel.Position = if KeybindsToggle.Normal then UDim2.new(1, -13, 0, -1) else UDim2.new(1, 6, 0, -1)
+                KeybindsToggleLabel.Position = if KeybindsToggle.Normal then UDim2.new(1, -7, 0, -1) else UDim2.new(1, 6, 0, -1)
             end
 
             KeyPicker.DoClick = function(...) end --// make luau lsp shut up
