@@ -6570,7 +6570,7 @@ function Library:CreateWindow(...)
     end
 
     if WindowInfo.Size == UDim2.fromOffset(0, 0) then
-        WindowInfo.Size = if Library.IsMobile then UDim2.fromOffset(550, math.clamp(ViewportSize.Y - 35, 200, 625)) else UDim2.fromOffset(550, 625)
+        WindowInfo.Size = if Library.IsMobile then UDim2.fromOffset(550, math.clamp(ViewportSize.Y - 35, 200, 665)) else UDim2.fromOffset(550, 665)
     end
 
     Library.NotifySide = WindowInfo.NotifySide
