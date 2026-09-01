@@ -470,39 +470,30 @@ local SaveManager = {} do
 
             self.Library:Notify(string.format('Loaded config %q', name))
         end)
-        section:AddButton({
-            Text = 'Overwrite config',
-            DoubleClick = true, -- 더블 클릭 활성화
-            Func = function()
-                local name = self.Library.Options.SaveManager_ConfigList.Value
+        section:AddButton('Overwrite config', function()
+            local name = self.Library.Options.SaveManager_ConfigList.Value
 
-                local success, err = self:Save(name)
-                if not success then
-                    self.Library:Notify('Failed to overwrite config: ' .. err)
-                    return
-                end
-
-                self.Library:Notify(string.format('Overwrote config %q', name))
+            local success, err = self:Save(name)
+            if not success then
+                self.Library:Notify('Failed to overwrite config: ' .. err)
+                return
             end
-        })
 
-        section:AddButton({
-            Text = 'Delete config',
-            DoubleClick = true, -- 더블 클릭 활성화
-            Func = function()
-                local name = self.Library.Options.SaveManager_ConfigList.Value
+            self.Library:Notify(string.format('Overwrote config %q', name))
+        end)
+        section:AddButton('Delete config', function()
+            local name = self.Library.Options.SaveManager_ConfigList.Value
 
-                local success, err = self:Delete(name)
-                if not success then
-                    self.Library:Notify('Failed to delete config: ' .. err)
-                    return
-                end
-
-                self.Library:Notify(string.format('Deleted config %q', name))
-                self.Library.Options.SaveManager_ConfigList:SetValues(self:RefreshConfigList())
-                self.Library.Options.SaveManager_ConfigList:SetValue(nil)
+            local success, err = self:Delete(name)
+            if not success then
+                self.Library:Notify('Failed to delete config: ' .. err)
+                return
             end
-        })
+
+            self.Library:Notify(string.format('Deleted config %q', name))
+            self.Library.Options.SaveManager_ConfigList:SetValues(self:RefreshConfigList())
+            self.Library.Options.SaveManager_ConfigList:SetValue(nil)
+        end)
 
         section:AddButton('Refresh list', function()
             self.Library.Options.SaveManager_ConfigList:SetValues(self:RefreshConfigList())
