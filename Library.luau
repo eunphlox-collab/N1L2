@@ -284,7 +284,7 @@ local Library = {
     Notify = nil;
     NotifySide = "Left";
     ShowCustomCursor = true;
-    ShowToggleFrameInKeybinds = true;
+    ShowToggleFrameInKeybinds = false;
     NotifyOnError = false; -- true = Library:Notify for SafeCallback (still warns in the developer console)
 
     -- addons --
