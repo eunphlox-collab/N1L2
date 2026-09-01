@@ -6186,7 +6186,7 @@ do
     local WatermarkOuter = Library:Create("Frame", {
         BorderColor3 = Color3.new(0, 0, 0);
         Position = UDim2.new(0, 100, 0, -25);
-        Size = UDim2.new(0, 213, 0, 20);
+        Size = UDim2.new(0, 234, 0, 31);
         ZIndex = 200;
         Visible = false;
         Parent = ScreenGui;
@@ -6254,7 +6254,7 @@ do
     })
 
     local WatermarkLabel = Library:CreateLabel({
-        Position = UDim2.new(0, 5, 0, 0);
+        Position = UDim2.new(0, 7, 0, 0);
         Size = UDim2.new(1, -4, 1, 0);
         TextSize = 14;
         TextXAlignment = Enum.TextXAlignment.Left;
@@ -6272,7 +6272,7 @@ do
 
     function Library:SetWatermark(Text)
         local X, Y = Library:GetTextBounds(Text, Library.Font, 14)
-        Library.Watermark.Size = UDim2.new(0, X + 15, 0, (Y * 1.5) + 3)
+        Library.Watermark.Size = UDim2.new(0, X + 17, 0, 31)
         Library:SetWatermarkVisibility(true)
 
         Library.WatermarkText.Text = Text
