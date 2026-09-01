@@ -472,7 +472,7 @@ local SaveManager = {} do
         end)
         section:AddButton('Overwrite config', function()
             local name = self.Library.Options.SaveManager_ConfigList.Value
-
+            DoubleClick = true,
             local success, err = self:Save(name)
             if not success then
                 self.Library:Notify('Failed to overwrite config: ' .. err)
@@ -484,7 +484,7 @@ local SaveManager = {} do
 
         section:AddButton('Delete config', function()
             local name = self.Library.Options.SaveManager_ConfigList.Value
-
+            DoubleClick = true,
             local success, err = self:Delete(name)
             if not success then
                 self.Library:Notify('Failed to delete config: ' .. err)
