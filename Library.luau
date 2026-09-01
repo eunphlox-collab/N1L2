@@ -6122,6 +6122,13 @@ do
         Parent = KeybindOuter;
     })
 
+    local shadow = Instance.new("UIShadow")
+    shadow.Name = "UIShadow"
+    shadow.BlurRadius = UDim.new(0, 100)
+    shadow.Color = Color3.fromRGB(0, 0, 0)
+    shadow.Transparency = 0
+    shadow.Parent = KeybindInner
+
     Library:AddToRegistry(KeybindInner, {
         BackgroundColor3 = "MainColor";
         BorderColor3 = "OutlineColor";
@@ -6194,6 +6201,13 @@ do
         ZIndex = 201;
         Parent = WatermarkOuter;
     })
+
+    local shadow = Instance.new("UIShadow")
+    shadow.Name = "UIShadow"
+    shadow.BlurRadius = UDim.new(0, 100)
+    shadow.Color = Color3.fromRGB(0, 0, 0)
+    shadow.Transparency = 0
+    shadow.Parent = WatermarkInner
 
     Library:AddToRegistry(WatermarkInner, {
         BorderColor3 = "AccentColor";
@@ -6588,7 +6602,6 @@ function Library:CreateWindow(...)
     local shadow = Instance.new("UIShadow")
     shadow.Name = "UIShadow"
     shadow.BlurRadius = UDim.new(0, 100)
-    shadow.Offset = UDim2.new(0, 0, 0, 100)
     shadow.Color = Color3.fromRGB(0, 0, 0)
     shadow.Transparency = 0
     shadow.Parent = Inner
