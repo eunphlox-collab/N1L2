@@ -1635,7 +1635,7 @@ do
                 end
             end
 
-            Library.KeybindFrame.Size = UDim2.new(0, math.max(XSize + 10, 220), 0, (YSize + 23 + 6) * DPIScale)
+            Library.KeybindFrame.Size = UDim2.new(0, math.max(XSize + 10, 290), 0, (YSize + 23 + 6) * DPIScale)
             UpdateMenuOuterPos()
         end
 
