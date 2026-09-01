@@ -6349,8 +6349,8 @@ do
         end
 
         local Side = string.lower(Library.NotifySide)
-        local XSize, YSize = Library:GetTextBounds(Data.Description, Library.Font, 14)
-        YSize = YSize + 7
+        local XSize, YSize = Library:GetTextBounds(Data.Description, Library.Font, 15)
+        YSize = 31
 
         local NotifyOuter = Library:Create("Frame", {
             BorderColor3 = Color3.new(0, 0, 0);
@@ -6458,11 +6458,11 @@ do
         })
 
         local SideColor = Library:Create("Frame", {
-            AnchorPoint = Side == "left" and Vector2.new(0, 0) or Vector2.new(1, 0);
-            Position = Side == "left" and UDim2.new(0, -1, 0, -1) or UDim2.new(1, -1, 0, -1);
+            AnchorPoint = Vector2.new(0, 1);
+            Position = UDim2.new(0, 0, 1, 0);
             BackgroundColor3 = Library.AccentColor;
             BorderSizePixel = 0;
-            Size = UDim2.new(0, 3, 1, 2);
+            Size = UDim2.new(1, 0, 0, 2);
             ZIndex = 11004;
             Parent = NotifyOuter;
         })
@@ -6472,8 +6472,8 @@ do
         }, true)
 
         function Data:Resize()
-            XSize, YSize = Library:GetTextBounds(NotifyLabel.Text, Library.Font, 14)
-            YSize = YSize + 7
+            XSize, YSize = Library:GetTextBounds(NotifyLabel.Text, Library.Font, 15)
+            YSize = 31
             
             pcall(NotifyOuter.TweenSize, NotifyOuter, UDim2.new(0, XSize * DPIScale + 8 + 4 + ExtraWidth, 0, YSize), "Out", "Quad", 0.4, true)
         end
