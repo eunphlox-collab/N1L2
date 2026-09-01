@@ -1131,7 +1131,7 @@ local Templates = { -- TO-DO: do it for missing elements.
         TabPadding = 1,
         MenuFadeTime = 0.2,
         NotifySide = "Left",
-        ShowCustomCursor = true,
+        ShowCustomCursor = false,
         UnlockMouseWhileOpen = true,
         Center = false
     },
@@ -6628,6 +6628,7 @@ function Library:CreateWindow(...)
         Position = UDim2.new(0, 0, 0, 0);
         Size = UDim2.new(1, 0, 0, 25);
         Text = WindowInfo.Title or "";
+        TextSize = 16,
         TextXAlignment = Enum.TextXAlignment.Center;
         ZIndex = 1;
         Parent = Inner;
