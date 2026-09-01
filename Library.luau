@@ -283,6 +283,7 @@ local Library = {
     -- notification --
     Notify = nil;
     NotifySide = "Left";
+    SoftDrag = false;
     ShowCustomCursor = false;
     ShowToggleFrameInKeybinds = false;
     NotifyOnError = false; -- true = Library:Notify for SafeCallback (still warns in the developer console)
@@ -561,7 +562,7 @@ function Library:MakeDraggable(Instance, Cutoff, IsMainWindow)
     local ActiveTween
 
     local function SetPosition(Position)
-        if IsMainWindow ~= true then
+        if IsMainWindow ~= true or Library.SoftDrag ~= true then
             Instance.Position = Position
             return
         end
