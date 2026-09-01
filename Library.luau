@@ -557,13 +557,30 @@ end
 function Library:MakeDraggable(Instance, Cutoff, IsMainWindow)
     Instance.Active = true
 
+    local DragInfo = TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
+    local ActiveTween
+
+    local function SetPosition(Position)
+        if IsMainWindow ~= true then
+            Instance.Position = Position
+            return
+        end
+
+        if ActiveTween then
+            ActiveTween:Cancel()
+        end
+
+        ActiveTween = TweenService:Create(Instance, DragInfo, { Position = Position })
+        ActiveTween:Play()
+    end
+
     if Library.IsMobile == false then
         Instance.InputBegan:Connect(function(Input)
             if Input.UserInputType == Enum.UserInputType.MouseButton1 then
                 if IsMainWindow == true and Library.CantDragForced == true then
                     return
                 end
-           
+
                 local ObjPos = Vector2.new(
                     Mouse.X - Instance.AbsolutePosition.X,
                     Mouse.Y - Instance.AbsolutePosition.Y
@@ -574,12 +591,12 @@ function Library:MakeDraggable(Instance, Cutoff, IsMainWindow)
                 end
 
                 while InputService:IsMouseButtonPressed(Enum.UserInputType.MouseButton1) do
-                    Instance.Position = UDim2.new(
+                    SetPosition(UDim2.new(
                         0,
                         Mouse.X - ObjPos.X + (Instance.Size.X.Offset * Instance.AnchorPoint.X),
                         0,
                         Mouse.Y - ObjPos.Y + (Instance.Size.Y.Offset * Instance.AnchorPoint.Y)
-                    )
+                    ))
 
                     RunService.RenderStepped:Wait()
                 end
@@ -608,6 +625,7 @@ function Library:MakeDraggable(Instance, Cutoff, IsMainWindow)
                 Dragging = true
             end
         end)
+
         InputService.TouchMoved:Connect(function(Input)
             if IsMainWindow == true and Library.CantDragForced == true then
                 Dragging = false
@@ -617,16 +635,17 @@ function Library:MakeDraggable(Instance, Cutoff, IsMainWindow)
             if Input == DraggingInput and Dragging and (IsMainWindow == true and (Library.CanDrag == true and Library.Window.Holder.Visible == true) or true) then
                 local OffsetPos = Input.Position - DraggingStart
 
-                Instance.Position = UDim2.new(
+                SetPosition(UDim2.new(
                     StartPosition.X.Scale,
                     StartPosition.X.Offset + OffsetPos.X,
                     StartPosition.Y.Scale,
                     StartPosition.Y.Offset + OffsetPos.Y
-                )
+                ))
             end
         end)
+
         InputService.TouchEnded:Connect(function(Input)
-            if Input == DraggingInput then 
+            if Input == DraggingInput then
                 Dragging = false
             end
         end)
