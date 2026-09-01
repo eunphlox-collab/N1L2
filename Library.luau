@@ -562,7 +562,7 @@ function Library:MakeDraggable(Instance, Cutoff, IsMainWindow)
     local ActiveTween
 
     local function SetPosition(Position)
-        if IsMainWindow ~= true or Library.SoftDrag ~= true then
+        if Library.SoftDrag ~= true then
             Instance.Position = Position
             return
         end
