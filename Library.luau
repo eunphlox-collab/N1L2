@@ -6124,7 +6124,7 @@ do
 
     local shadow = Instance.new("UIShadow")
     shadow.Name = "UIShadow"
-    shadow.BlurRadius = UDim.new(0, 100)
+    shadow.BlurRadius = UDim.new(0, 70)
     shadow.Color = Color3.fromRGB(0, 0, 0)
     shadow.Transparency = 0
     shadow.Parent = KeybindInner
@@ -6204,7 +6204,7 @@ do
 
     local shadow = Instance.new("UIShadow")
     shadow.Name = "UIShadow"
-    shadow.BlurRadius = UDim.new(0, 100)
+    shadow.BlurRadius = UDim.new(0, 70)
     shadow.Color = Color3.fromRGB(0, 0, 0)
     shadow.Transparency = 0
     shadow.Parent = WatermarkInner
@@ -6614,7 +6614,7 @@ function Library:CreateWindow(...)
 
     local shadow = Instance.new("UIShadow")
     shadow.Name = "UIShadow"
-    shadow.BlurRadius = UDim.new(0, 100)
+    shadow.BlurRadius = UDim.new(0, 70)
     shadow.Color = Color3.fromRGB(0, 0, 0)
     shadow.Transparency = 0
     shadow.Parent = Inner
