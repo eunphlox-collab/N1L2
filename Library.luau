@@ -6376,7 +6376,7 @@ do
         end
 
         local Side = string.lower(Library.NotifySide)
-        local XSize, YSize = Library:GetTextBounds(Data.Description, Library.Font, 15)
+        local XSize, YSize = Library:GetTextBounds(Data.Description, Library.Font, 16)
         YSize = 31
 
         local NotifyOuter = Library:Create("Frame", {
@@ -6500,7 +6500,7 @@ do
         }, true)
 
         function Data:Resize()
-            XSize, YSize = Library:GetTextBounds(NotifyLabel.Text, Library.Font, 15)
+            XSize, YSize = Library:GetTextBounds(NotifyLabel.Text, Library.Font, 16)
             YSize = 31
             
             pcall(NotifyOuter.TweenSize, NotifyOuter, UDim2.new(0, XSize * DPIScale + 8 + 4 + ExtraWidth, 0, YSize), "Out", "Quad", 0.4, true)
