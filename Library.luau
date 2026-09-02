@@ -6404,7 +6404,7 @@ do
         }, true)
 
         local InnerFrame = Library:Create("Frame", {
-            BackgroundColor3 = Color3.new(1, 1, 1);
+            BackgroundColor3 = Library.MainColor;
             BorderSizePixel = 0;
             Position = UDim2.new(0, 1, 0, 1);
             Size = UDim2.new(1, -2, 1, -2);
@@ -6486,11 +6486,11 @@ do
         })
 
         local SideColor = Library:Create("Frame", {
-            AnchorPoint = Vector2.new(0, 1);
-            Position = UDim2.new(0, 0, 1, 0);
+            AnchorPoint = Side == "left" and Vector2.new(0, 0) or Vector2.new(1, 0);
+            Position = Side == "left" and UDim2.new(0, -1, 0, -1) or UDim2.new(1, -1, 0, -1);
             BackgroundColor3 = Library.AccentColor;
             BorderSizePixel = 0;
-            Size = UDim2.new(1, 0, 0, 2);
+            Size = UDim2.new(0, 3, 1, 2);
             ZIndex = 11004;
             Parent = NotifyOuter;
         })
