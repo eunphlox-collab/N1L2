@@ -2138,6 +2138,7 @@ do
             ZIndex = 18,
             Parent = HueBoxOuter;
         })
+        --[[
         Library:Create("UIGradient", {
             Color = ColorSequence.new({
                 ColorSequenceKeypoint.new(0, Color3.new(1, 1, 1)),
@@ -2146,6 +2147,7 @@ do
             Rotation = 90;
             Parent = HueBoxInner;
         })
+        ]]
 
         local HueBox = Library:Create("TextBox", {
             BackgroundTransparency = 1;
@@ -2382,11 +2384,13 @@ do
         end
 
         -- local HueSelectorGradient =
+        --[[
         Library:Create("UIGradient", {
             Color = ColorSequence.new(SequenceTable);
             Rotation = 90;
             Parent = HueSelectorInner;
         })
+        ]]
 
         function ColorPicker:Display()
             ColorPicker.Value = Color3.fromHSV(ColorPicker.Hue, ColorPicker.Sat, ColorPicker.Vib)
@@ -2679,7 +2683,7 @@ do
             BackgroundColor3 = "MainColor";
             BorderColor3 = "OutlineColor";
         })
-
+        --[[
         Library:Create("UIGradient", {
             Color = ColorSequence.new({
                 ColorSequenceKeypoint.new(0, Color3.new(1, 1, 1)),
@@ -2688,6 +2692,7 @@ do
             Rotation = 90;
             Parent = DropdownInner;
         })
+        ]]
 
         local DropdownInnerSearch
         if Info.Searchable then
@@ -3534,7 +3539,7 @@ do
                 Parent = Inner;
                 RichText = true;
             })
-
+            --[[
             Library:Create("UIGradient", {
                 Color = ColorSequence.new({
                     ColorSequenceKeypoint.new(0, Color3.new(1, 1, 1)),
@@ -3543,6 +3548,7 @@ do
                 Rotation = 90;
                 Parent = Inner;
             })
+            ]]
 
             Library:AddToRegistry(Outer, {
                 BorderColor3 = "Black";
@@ -3820,7 +3826,7 @@ do
             TooltipTable = Library:AddToolTip(Info.Tooltip, Info.DisabledTooltip, TextBoxOuter)
             TooltipTable.Disabled = Textbox.Disabled
         end
-
+        --[[
         Library:Create("UIGradient", {
             Color = ColorSequence.new({
                 ColorSequenceKeypoint.new(0, Color3.new(1, 1, 1)),
@@ -3829,6 +3835,7 @@ do
             Rotation = 90;
             Parent = TextBoxInner;
         })
+        ]]
 
         local TextBoxContainer = Library:Create("Frame", {
             BackgroundTransparency = 1;
@@ -4691,7 +4698,7 @@ do
             BackgroundColor3 = "MainColor";
             BorderColor3 = "OutlineColor";
         })
-
+        --[[
         Library:Create("UIGradient", {
             Color = ColorSequence.new({
                 ColorSequenceKeypoint.new(0, Color3.new(1, 1, 1)),
@@ -4700,6 +4707,7 @@ do
             Rotation = 90;
             Parent = DropdownInner;
         })
+        ]]
 
         local DropdownInnerSearch
         if Info.Searchable then
@@ -6240,7 +6248,7 @@ do
         ZIndex = 202;
         Parent = WatermarkInner;
     })
-
+    --[[
     local Gradient = Library:Create("UIGradient", {
         Color = ColorSequence.new({
             ColorSequenceKeypoint.new(0, Library:GetDarkerColor(Library.MainColor)),
@@ -6249,6 +6257,7 @@ do
         Rotation = -90;
         Parent = InnerFrame;
     })
+    ]]
 
     Library:AddToRegistry(Gradient, {
         Color = function()
@@ -6404,7 +6413,7 @@ do
             ZIndex = 11002;
             Parent = NotifyInner;
         })
-
+        --[[
         local Gradient = Library:Create("UIGradient", {
             Color = ColorSequence.new({
                 ColorSequenceKeypoint.new(0, Library:GetDarkerColor(Library.MainColor)),
@@ -6413,6 +6422,7 @@ do
             Rotation = -90;
             Parent = InnerFrame;
         })
+        ]]
 
         Library:AddToRegistry(Gradient, {
             Color = function()
@@ -7151,7 +7161,7 @@ function Library:CreateWindow(...)
             elseif Variant == "Ghost" then
                 Library:AddToRegistry(TextBtn, { BackgroundColor3 = "MainColor", BorderColor3 = "MainColor" })
             end
-
+            --[[
             Library:Create("UIGradient", {
                 Color = ColorSequence.new({
                     ColorSequenceKeypoint.new(0, Color3.new(1, 1, 1)),
@@ -7160,6 +7170,7 @@ function Library:CreateWindow(...)
                 Rotation = 90,
                 Parent = TextBtn,
             })
+            ]]
 
             local HighlightBorderColor = Variant == "Destructive" and DestructiveColor or Library.AccentColor
             ButtonContainer.MouseEnter:Connect(function()
@@ -8130,7 +8141,7 @@ end
             ZIndex = 202;
             Parent = ToggleUIInner;
         })
-    
+        --[[
         local ToggleUIGradient = Library:Create("UIGradient", {
             Color = ColorSequence.new({
                 ColorSequenceKeypoint.new(0, Library:GetDarkerColor(Library.MainColor)),
@@ -8139,6 +8150,7 @@ end
             Rotation = -90;
             Parent = ToggleUIInnerFrame;
         })
+        ]]
     
         Library:AddToRegistry(ToggleUIGradient, {
             Color = function()
@@ -8200,7 +8212,7 @@ end
             ZIndex = 202;
             Parent = LockUIInner;
         })
-    
+        --[[
         local LockUIGradient = Library:Create("UIGradient", {
             Color = ColorSequence.new({
                 ColorSequenceKeypoint.new(0, Library:GetDarkerColor(Library.MainColor)),
@@ -8209,7 +8221,8 @@ end
             Rotation = -90;
             Parent = LockUIInnerFrame;
         })
-    
+        ]]
+
         Library:AddToRegistry(LockUIGradient, {
             Color = function()
                 return ColorSequence.new({
