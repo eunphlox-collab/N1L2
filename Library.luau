@@ -2144,7 +2144,6 @@ do
                 ColorSequenceKeypoint.new(1, Color3.fromRGB(212, 212, 212))
             });
             Rotation = 90;
-            Enabled = false;
             Parent = HueBoxInner;
         })
 
