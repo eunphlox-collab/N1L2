@@ -6539,7 +6539,7 @@ do
                 SoundId = "rbxassetid://" .. tostring(Data.SoundId):gsub("rbxassetid://", "");
                 Volume = 3;
                 PlayOnRemove = true;
-                Parent = game:GetService("SoundService");
+                Parent = cloneref(game:GetService("SoundService"));
             }):Destroy()
         end
 
