@@ -6432,7 +6432,7 @@ do
         })
 
         local ExtraWidth = 0
-        local TextPosition = Side == "left" and UDim2.new(0, 4, 0, 0) or UDim2.new(1, -4, 0, 0)
+        local TextPosition = Side == "left" and UDim2.new(0, 5, 0, 0) or UDim2.new(1, -5, 0, 0)
         local TextSizeOffsetX = -4
         local TextSizeOffsetY = 0
 
@@ -6445,7 +6445,7 @@ do
                 TextSizeOffsetY = TextSizeOffsetY - 2
 
                 if Side == "left" then
-                    TextPosition = UDim2.new(0, 24, 0, 0)
+                    TextPosition = UDim2.new(0, 25, 0, 0)
                 end
 
                 IconLabel = Library:Create("ImageLabel", {
@@ -6468,7 +6468,7 @@ do
                 end
                 
                 if Side == "right" then
-                    TextPosition = UDim2.new(1, -8, 0, 0)
+                    TextPosition = UDim2.new(1, -9, 0, 0)
                 end
             end
         end
@@ -6503,7 +6503,7 @@ do
             XSize, YSize = Library:GetTextBounds(NotifyLabel.Text, Library.Font, 16)
             YSize = 31
             
-            pcall(NotifyOuter.TweenSize, NotifyOuter, UDim2.new(0, XSize * DPIScale + 8 + 4 + ExtraWidth, 0, YSize), "Out", "Quad", 0.4, true)
+            pcall(NotifyOuter.TweenSize, NotifyOuter, UDim2.new(0, XSize * DPIScale + 8 + 5 + ExtraWidth, 0, YSize), "Out", "Quad", 0.4, true)
         end
 
         function Data:ChangeTitle(NewText)
@@ -6552,7 +6552,7 @@ do
         end
 
         NotifyOuter.Visible = true
-        pcall(NotifyOuter.TweenSize, NotifyOuter, UDim2.new(0, XSize * DPIScale + 8 + 4 + ExtraWidth, 0, YSize), "Out", "Quad", 0.4, true)
+        pcall(NotifyOuter.TweenSize, NotifyOuter, UDim2.new(0, XSize * DPIScale + 8 + 5 + ExtraWidth, 0, YSize), "Out", "Quad", 0.4, true)
 
         task.delay(0.4, function()
             if Data.Persist then
