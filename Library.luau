@@ -2144,6 +2144,7 @@ do
                 ColorSequenceKeypoint.new(1, Color3.fromRGB(212, 212, 212))
             });
             Rotation = 90;
+            Enabled = false;
             Parent = HueBoxInner;
         })
 
@@ -2385,6 +2386,7 @@ do
         Library:Create("UIGradient", {
             Color = ColorSequence.new(SequenceTable);
             Rotation = 90;
+            Enabled = false;
             Parent = HueSelectorInner;
         })
 
@@ -2686,6 +2688,7 @@ do
                 ColorSequenceKeypoint.new(1, Color3.fromRGB(212, 212, 212))
             });
             Rotation = 90;
+            Enabled = false;
             Parent = DropdownInner;
         })
 
@@ -3541,6 +3544,7 @@ do
                     ColorSequenceKeypoint.new(1, Color3.fromRGB(212, 212, 212))
                 });
                 Rotation = 90;
+                Enabled = false;
                 Parent = Inner;
             })
 
@@ -3827,6 +3831,7 @@ do
                 ColorSequenceKeypoint.new(1, Color3.fromRGB(212, 212, 212))
             });
             Rotation = 90;
+            Enabled = false;
             Parent = TextBoxInner;
         })
 
@@ -4698,6 +4703,7 @@ do
                 ColorSequenceKeypoint.new(1, Color3.fromRGB(212, 212, 212))
             });
             Rotation = 90;
+            Enabled = false;
             Parent = DropdownInner;
         })
 
@@ -6247,6 +6253,7 @@ do
             ColorSequenceKeypoint.new(1, Library.MainColor),
         });
         Rotation = -90;
+        Enabled = false;
         Parent = InnerFrame;
     })
 
@@ -6411,6 +6418,7 @@ do
                 ColorSequenceKeypoint.new(1, Library.MainColor),
             });
             Rotation = -90;
+            Enabled = false;
             Parent = InnerFrame;
         })
 
@@ -7158,6 +7166,7 @@ function Library:CreateWindow(...)
                     ColorSequenceKeypoint.new(1, Color3.fromRGB(212, 212, 212)),
                 }),
                 Rotation = 90,
+                Enabled = false;
                 Parent = TextBtn,
             })
 
@@ -8137,6 +8146,7 @@ end
                 ColorSequenceKeypoint.new(1, Library.MainColor),
             });
             Rotation = -90;
+            Enabled = false;
             Parent = ToggleUIInnerFrame;
         })
     
@@ -8207,6 +8217,7 @@ end
                 ColorSequenceKeypoint.new(1, Library.MainColor),
             });
             Rotation = -90;
+            Enabled = false;
             Parent = LockUIInnerFrame;
         })
     
