@@ -8015,7 +8015,7 @@ end
                         Cursor.PointA = Vector2.new(X, Y)
                         Cursor.PointB = Vector2.new(X + 16, Y + 6)
                         Cursor.PointC = Vector2.new(X + 6, Y + 16)
-                        Cursor.Visible = Library.ShowCustomCursor
+                        Cursor.Visible = shouldDrawCursor
                         CursorOutline.PointA = Cursor.PointA
                         CursorOutline.PointB = Cursor.PointB
                         CursorOutline.PointC = Cursor.PointC
