@@ -8007,7 +8007,8 @@ end
                     local ShowCursorBinding = Library.ShowCursorBinding
                     pcall(function() RunService:UnbindFromRenderStep(ShowCursorBinding) end)
                     RunService:BindToRenderStep(ShowCursorBinding, Enum.RenderPriority.Camera.Value - 1, function()
-                        InputService.MouseIconEnabled = not Library.ShowCustomCursor
+                        local shouldDrawCursor = Library.ShowCustomCursor and not InputService.MouseIconEnabled
+                        --InputService.MouseIconEnabled = not Library.ShowCustomCursor
                         local mPos = InputService:GetMouseLocation()
                         local X, Y = mPos.X, mPos.Y
                         Cursor.Color = Library.AccentColor
@@ -8018,7 +8019,7 @@ end
                         CursorOutline.PointA = Cursor.PointA
                         CursorOutline.PointB = Cursor.PointB
                         CursorOutline.PointC = Cursor.PointC
-                        CursorOutline.Visible = Library.ShowCustomCursor
+                        CursorOutline.Visible = shouldDrawCursor
 
                         if not Toggled or (not ScreenGui or not ScreenGui.Parent) then
                             InputService.MouseIconEnabled = OldMouseIconState
