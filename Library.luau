@@ -224,6 +224,29 @@ do
     end
 end
 
+local CustomFont = Font.fromEnum(Enum.Font.Code)
+pcall(function()
+    if writefile and getcustomasset and isfile then
+        if not isfolder("Obsidian") then makefolder("Obsidian") end
+        if not isfolder("Obsidian/assets") then makefolder("Obsidian/assets") end
+
+        local ttfPath = "Obsidian/assets/SmallestPixel7.ttf"
+        local jsonPath = "Obsidian/assets/SmallestPixel7.json"
+
+        if not isfile(ttfPath) then
+            writefile(ttfPath, game:HttpGet("https://raw.githubusercontent.com/sam3k0/SmallestPixel/main/smallest_pixel-7.ttf"))
+        end
+
+        local fontDesc = string.format(
+            '{"name":"SmallestPixel7","faces":[{"name":"Regular","weight":400,"style":"normal","assetId":"%s"}]}',
+            getcustomasset(ttfPath)
+        )
+        writefile(jsonPath, fontDesc)
+
+        CustomFont = Font.new(getcustomasset(jsonPath))
+    end
+end)
+
 local DPIScale = 1;
 local Library = {
     Registry = {};
@@ -246,7 +269,7 @@ local Library = {
     RiskColor = Color3.fromRGB(255, 50, 50);
 
     Black = Color3.new(0, 0, 0);
-    Font = Enum.Font.Code,
+    Font = CustomFont,
 
     -- frames --
     OpenedFrames = {};
