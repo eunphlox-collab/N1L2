@@ -6131,7 +6131,7 @@ do
         AnchorPoint = Vector2.new(0, 0.5);
         BorderColor3 = Color3.new(0, 0, 0);
         Position = UDim2.new(0, 10, 0.5, 0);
-        Size = UDim2.new(0, 300, 0, 22);
+        Size = UDim2.new(0, 300, 0, 21);
         Visible = false;
         ZIndex = 100;
         Parent = ScreenGui;
@@ -6184,8 +6184,8 @@ do
 
     local KeybindContainer = Library:Create("Frame", {
         BackgroundTransparency = 1;
-        Size = UDim2.new(1, 0, 1, -22);
-        Position = UDim2.new(0, 0, 0, 22);
+        Size = UDim2.new(1, 0, 1, -21);
+        Position = UDim2.new(0, 0, 0, 21);
         ZIndex = 1;
         Parent = KeybindInner;
     })
