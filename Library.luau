@@ -6131,7 +6131,7 @@ do
         AnchorPoint = Vector2.new(0, 0.5);
         BorderColor3 = Color3.new(0, 0, 0);
         Position = UDim2.new(0, 10, 0.5, 0);
-        Size = UDim2.new(0, 300, 0, 20);
+        Size = UDim2.new(0, 300, 0, 22);
         Visible = false;
         ZIndex = 100;
         Parent = ScreenGui;
@@ -6176,6 +6176,7 @@ do
         TextXAlignment = Enum.TextXAlignment.Center,
 
         Text = "Keybinds";
+        TextSize = 18;
         ZIndex = 104;
         Parent = KeybindInner;
     })
@@ -6183,8 +6184,8 @@ do
 
     local KeybindContainer = Library:Create("Frame", {
         BackgroundTransparency = 1;
-        Size = UDim2.new(1, 0, 1, -20);
-        Position = UDim2.new(0, 0, 0, 20);
+        Size = UDim2.new(1, 0, 1, -22);
+        Position = UDim2.new(0, 0, 0, 22);
         ZIndex = 1;
         Parent = KeybindInner;
     })
@@ -6654,7 +6655,7 @@ function Library:CreateWindow(...)
         Position = UDim2.new(0, 0, 0, 0);
         Size = UDim2.new(1, 0, 0, 25);
         Text = WindowInfo.Title or "";
-        TextSize = 19,
+        TextSize = 18,
         TextXAlignment = Enum.TextXAlignment.Center;
         ZIndex = 1;
         Parent = Inner;
