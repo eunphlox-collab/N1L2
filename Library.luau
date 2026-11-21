@@ -6509,7 +6509,7 @@ do
             Size = UDim2.new(1, TextSizeOffsetX, 1, TextSizeOffsetY);
             Text = (Data.Title == "" and "" or "[" .. Data.Title .. "] ") .. tostring(Data.Description);
             TextXAlignment = Side == "left" and Enum.TextXAlignment.Left or Enum.TextXAlignment.Right;
-            --FontFace = customFont;
+            FontFace = customFont;
             TextSize = 12;
             ZIndex = 11003;
             RichText = true;
@@ -6545,7 +6545,7 @@ do
         }, true)
 
         function Data:Resize()
-            XSize, YSize = Library:GetTextBounds(NotifyLabel.Text, Library.Font, 12)
+            XSize = NotifyLabel.TextBounds.X
             YSize = 28
             
             pcall(NotifyOuter.TweenSize, NotifyOuter, UDim2.new(0, XSize * DPIScale + 8 + 19 + ExtraWidth, 0, YSize), "Out", "Quad", 0.4, true)
