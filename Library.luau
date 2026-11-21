@@ -6406,7 +6406,7 @@ do
         end
 
         local Side = string.lower(Library.NotifySide)
-        local XSize, YSize = Library:GetTextBounds(Data.Description, Library.Font, 16)
+        local XSize, YSize = Library:GetTextBounds(Data.Description, Library.Font, 12)
         YSize = 31
 
         local NotifyOuter = Library:Create("Frame", {
@@ -6462,7 +6462,7 @@ do
         })
 
         local ExtraWidth = 0
-        local TextPosition = Side == "left" and UDim2.new(0, 5, 0, 0) or UDim2.new(1, -5, 0, 0)
+        local TextPosition = Side == "left" and UDim2.new(0, 7, 0, 0) or UDim2.new(1, -7, 0, 0)
         local TextSizeOffsetX = -4
         local TextSizeOffsetY = 0
 
@@ -6510,7 +6510,7 @@ do
             Text = (Data.Title == "" and "" or "[" .. Data.Title .. "] ") .. tostring(Data.Description);
             TextXAlignment = Side == "left" and Enum.TextXAlignment.Left or Enum.TextXAlignment.Right;
             FontFace = customFont;
-            TextSize = 16;
+            TextSize = 12;
             ZIndex = 11003;
             RichText = true;
             Parent = InnerFrame;
@@ -6531,8 +6531,8 @@ do
         }, true)
 
         function Data:Resize()
-            XSize, YSize = Library:GetTextBounds(NotifyLabel.Text, Library.Font, 16)
-            YSize = 31
+            XSize, YSize = Library:GetTextBounds(NotifyLabel.Text, Library.Font, 12)
+            YSize = 28
             
             pcall(NotifyOuter.TweenSize, NotifyOuter, UDim2.new(0, XSize * DPIScale + 8 + 5 + ExtraWidth, 0, YSize), "Out", "Quad", 0.4, true)
         end
