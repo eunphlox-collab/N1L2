@@ -34,6 +34,34 @@ local assert = function(condition, errorMessage)
 	end
 end
 
+if not isfolder("N1L") then makefolder("N1L") end
+if not isfolder("N1L/fonts") then makefolder("N1L/fonts") end
+
+if not isfile("N1L/fonts/tahoma.ttf") then
+	writefile(
+		"N1L/fonts/tahoma.ttf",
+		game:HttpGet("https://github.com/i77lhm/storage/raw/refs/heads/main/fonts/fs-tahoma-8px.ttf")
+	)
+end
+
+local tahoma8px = {
+	name = "fs-tahoma-8px",
+	faces = {
+		{
+			name = "Regular",
+			weight = 400,
+			style = "normal",
+			assetId = getcustomasset("N1L/fonts/tahoma.ttf"),
+		},
+	},
+}
+
+if not isfile("N1L/fonts/tahoma_encoded.ttf") then
+	writefile("N1L/fonts/tahoma_encoded.ttf", HttpService:JSONEncode(tahoma8px))
+end
+
+local customFont = Font.new(getcustomasset("N1L/fonts/tahoma_encoded.ttf"), Enum.FontWeight.Regular)
+
 local function SafeParentUI(Instance: Instance, Parent: Instance | () -> Instance)
 	local success, _error = pcall(function()
 		if not Parent then
@@ -6479,6 +6507,7 @@ do
             Size = UDim2.new(1, TextSizeOffsetX, 1, TextSizeOffsetY);
             Text = (Data.Title == "" and "" or "[" .. Data.Title .. "] ") .. tostring(Data.Description);
             TextXAlignment = Side == "left" and Enum.TextXAlignment.Left or Enum.TextXAlignment.Right;
+            FontFace = customFont;
             TextSize = 16;
             ZIndex = 11003;
             RichText = true;
