@@ -6407,7 +6407,7 @@ do
 
         local Side = string.lower(Library.NotifySide)
         local XSize, YSize = Library:GetTextBounds(Data.Description, Library.Font, 12)
-        YSize = 31
+        YSize = 28
 
         local NotifyOuter = Library:Create("Frame", {
             BorderColor3 = Color3.new(0, 0, 0);
