@@ -6530,6 +6530,20 @@ do
             BackgroundColor3 = "AccentColor";
         }, true)
 
+        local TimeBar = Library:Create("Frame", {
+            AnchorPoint = Vector2.new(1, 1);
+            Position = UDim2.new(1, 0, 1, 0);
+            BackgroundColor3 = Library.AccentColor;
+            BorderSizePixel = 0;
+            Size = UDim2.new(1, 0, 0, 2);
+            ZIndex = 11004;
+            Parent = InnerFrame;
+        })
+
+        Library:AddToRegistry(TimeBar, {
+            BackgroundColor3 = "AccentColor";
+        }, true)
+
         function Data:Resize()
             XSize, YSize = Library:GetTextBounds(NotifyLabel.Text, Library.Font, 12)
             YSize = 28
@@ -6593,7 +6607,11 @@ do
                     task.wait()
                 until DeletedInstance or Data.Destroyed
             else
-                task.wait(Data.Time or 5)
+                local Duration = Data.Time or 5
+                TweenService:Create(TimeBar, TweenInfo.new(Duration, Enum.EasingStyle.Linear), {
+                    Size = UDim2.new(0, 0, 0, 2)
+                }):Play()
+                task.wait(Duration)
             end
 
             if not Data.Destroyed then
