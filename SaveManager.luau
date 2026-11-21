@@ -397,7 +397,7 @@ local SaveManager = {} do
                 return
             end
 
-            self.Library:Notify(string.format('Auto loaded config %q', name))
+            --self.Library:Notify(string.format('Auto loaded config %q', name))
         end
     end
 
