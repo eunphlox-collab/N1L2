@@ -6550,6 +6550,12 @@ do
             pcall(NotifyOuter.TweenSize, NotifyOuter, UDim2.new(0, XSize * DPIScale + 8 + 9 + ExtraWidth, 0, YSize), "Out", "Quad", 0.4, true)
         end
 
+        NotifyLabel:GetPropertyChangedSignal("TextBounds"):Connect(function()
+            if not Data.Destroyed then
+                Data:Resize()
+            end
+        end)
+
         function Data:ChangeTitle(NewText)
             NewText = NewText == nil and "" or tostring(NewText)
             Data.Title = NewText
@@ -6596,6 +6602,7 @@ do
         end
 
         NotifyOuter.Visible = true
+        Data:Resize()
 
         task.delay(0.4, function()
             if Data.Persist then
