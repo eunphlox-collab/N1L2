@@ -6531,8 +6531,8 @@ do
         }, true)
 
         local TimeBar = Library:Create("Frame", {
-            AnchorPoint = Vector2.new(1, 1);
-            Position = UDim2.new(1, 0, 1, 0);
+            AnchorPoint = Vector2.new(0, 1);
+            Position = UDim2.new(0, 0, 1, 1);
             BackgroundColor3 = Library.AccentColor;
             BorderSizePixel = 0;
             Size = UDim2.new(1, 0, 0, 2);
