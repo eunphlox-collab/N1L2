@@ -6548,7 +6548,7 @@ do
             XSize, YSize = Library:GetTextBounds(NotifyLabel.Text, Library.Font, 12)
             YSize = 28
             
-            pcall(NotifyOuter.TweenSize, NotifyOuter, UDim2.new(0, XSize * DPIScale + 8 + 17 + ExtraWidth, 0, YSize), "Out", "Quad", 0.4, true)
+            pcall(NotifyOuter.TweenSize, NotifyOuter, UDim2.new(0, XSize * DPIScale + 8 + 19 + ExtraWidth, 0, YSize), "Out", "Quad", 0.4, true)
         end
 
         function Data:ChangeTitle(NewText)
@@ -6597,7 +6597,7 @@ do
         end
 
         NotifyOuter.Visible = true
-        pcall(NotifyOuter.TweenSize, NotifyOuter, UDim2.new(0, XSize * DPIScale + 8 + 17 + ExtraWidth, 0, YSize), "Out", "Quad", 0.4, true)
+        pcall(NotifyOuter.TweenSize, NotifyOuter, UDim2.new(0, XSize * DPIScale + 8 + 19 + ExtraWidth, 0, YSize), "Out", "Quad", 0.4, true)
 
         task.delay(0.4, function()
             if Data.Persist then
