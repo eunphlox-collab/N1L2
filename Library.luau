@@ -6509,7 +6509,7 @@ do
             Size = UDim2.new(1, TextSizeOffsetX, 1, TextSizeOffsetY);
             Text = (Data.Title == "" and "" or "[" .. Data.Title .. "] ") .. tostring(Data.Description);
             TextXAlignment = Side == "left" and Enum.TextXAlignment.Left or Enum.TextXAlignment.Right;
-            FontFace = customFont;
+            --FontFace = customFont;
             TextSize = 12;
             ZIndex = 11003;
             RichText = true;
