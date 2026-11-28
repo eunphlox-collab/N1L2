@@ -6695,10 +6695,14 @@ function Library:CreateWindow(...)
 
     local shadow = Instance.new("UIShadow")
     shadow.Name = "UIShadow"
-    shadow.BlurRadius = UDim.new(0, 70)
-    shadow.Color = Color3.fromRGB(0, 0, 0)
+    shadow.BlurRadius = UDim.new(0, 50)
+    shadow.Color = Library.AccentColor
     shadow.Transparency = 0
     shadow.Parent = Inner
+
+    Library:AddToRegistry(shadow, {
+        Color = "AccentColor";
+    })
 
     Library:AddToRegistry(Inner, {
         BackgroundColor3 = "MainColor";
