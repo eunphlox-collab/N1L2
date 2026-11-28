@@ -6177,7 +6177,6 @@ do
     })
 
     local shadow = Instance.new("UIShadow")
-    shadow.Name = "UIShadow"
     shadow.BlurRadius = UDim.new(0, 0) --70
     shadow.Color = Color3.fromRGB(0, 0, 0)
     shadow.Transparency = 0
@@ -6258,7 +6257,6 @@ do
     })
 
     local shadow = Instance.new("UIShadow")
-    shadow.Name = "UIShadow"
     shadow.BlurRadius = UDim.new(0, 0) --70
     shadow.Color = Color3.fromRGB(0, 0, 0)
     shadow.Transparency = 0
@@ -6694,7 +6692,6 @@ function Library:CreateWindow(...)
     })
 
     local shadow = Instance.new("UIShadow")
-    shadow.Name = "UIShadow"
     shadow.BlurRadius = UDim.new(0, 50)
     shadow.Color = Library.AccentColor
     shadow.Transparency = 0
