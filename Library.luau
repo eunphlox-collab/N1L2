@@ -6692,7 +6692,7 @@ function Library:CreateWindow(...)
     })
 
     local shadow = Instance.new("UIShadow")
-    shadow.BlurRadius = UDim.new(0, 50)
+    shadow.BlurRadius = UDim.new(0, 45)
     shadow.Color = Library.AccentColor
     shadow.Transparency = 0
     shadow.Parent = Inner
